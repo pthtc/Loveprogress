@@ -4,14 +4,14 @@
 
 # 扫码下载
 
-![](https://github.com/pthtc/Loveprogress/blob/master/qr.png?raw=true)
+![扫码下载](https://github.com/pthtc/Loveprogress/blob/master/ReadMeImages/qr.png?raw=true)
 
 # APP信息
 * 名称：恋爱进度条
 * 官网：[恋爱进度条](http://www.loveprogress.cn)
 * 源码：[github（可以的话点个赞吧）](https://github.com/pthtc/Loveprogress)
 * 截图：
-![](https://user-gold-cdn.xitu.io/2018/1/21/161180358ea35bcf?w=2606&h=1160&f=jpeg&s=964998)
+![截图](https://github.com/pthtc/Loveprogress/blob/master/ReadMeImages/screenshot.jpg?raw=true)
 
 # 功能介绍
 
@@ -29,7 +29,7 @@
 * 将获得的`ApplicationId`和`clientKey `填入`AppDelegate.m`
 * 启动
 
-![](https://user-gold-cdn.xitu.io/2018/1/21/1611886c8acd5a77?w=898&h=1144&f=png&s=179105)
+![ER](https://github.com/pthtc/Loveprogress/blob/master/ReadMeImages/er.png?raw=true)
 
 # 第三方
 
