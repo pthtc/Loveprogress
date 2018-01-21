@@ -1,8 +1,14 @@
 # Loveprogress
 
+让恋爱进度清晰可见，跟随任务，每个人都是恋爱专家
+
+# 扫码下载
+
+![](https://github.com/pthtc/Loveprogress/blob/master/qr.png?raw=true)
+
 # APP信息
 * 名称：恋爱进度条
-* iOS版下载地址：[恋爱进度条](http://www.loveprogress.cn)
+* 官网：[恋爱进度条](http://www.loveprogress.cn)
 * 源码：[github（可以的话点个赞吧）](https://github.com/pthtc/Loveprogress)
 * 截图：
 ![](https://user-gold-cdn.xitu.io/2018/1/21/161180358ea35bcf?w=2606&h=1160&f=jpeg&s=964998)
