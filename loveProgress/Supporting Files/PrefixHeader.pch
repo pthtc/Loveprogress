@@ -1,0 +1,84 @@
+//
+//  PrefixHeader.pch
+//  SofoMall
+//
+//  Created by 彭天浩 on 16/9/27.
+//  Copyright © 2016年 pth. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define UI_IS_IPHONE            ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+#define UI_IS_IPHONE5           (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 568.0)
+#define UI_IS_IPHONE6           (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 667.0)
+#define UI_IS_IPHONE6PLUS       (UI_IS_IPHONE && [[UIScreen mainScreen] bounds].size.height == 736.0)
+
+
+//系统版本
+#define IOS10 ([[[UIDevice currentDevice] systemVersion] floatValue]>=10.0) && ([[[UIDevice currentDevice] systemVersion] floatValue] <11.0)
+
+#define IOS9 ([[[UIDevice currentDevice] systemVersion] floatValue]>=9.0) && ([[[UIDevice currentDevice] systemVersion] floatValue] <10.0)
+
+#define IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue]>=8.0) && ([[[UIDevice currentDevice] systemVersion] floatValue] <9.0)
+
+#define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue]>=7.0) && ([[[UIDevice currentDevice] systemVersion] floatValue] <8.0)
+
+//颜色
+#define RGBA(r, g, b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define PLACEHODER_COLOR RGBA(236, 240, 241,1)
+#define ZANGQING_COLOR RGBA(18, 53, 85,1)
+#define MEIHONG_COLOR RGBA(255, 64, 129,1)
+#define HONG_COLOR RGBA(209, 73, 78,1)
+#define TABICON_COLOR RGBA(230, 155, 3,1)
+#define WHITE_COLOR RGBA(255, 255, 255,1)
+#define BLACK_COLOR RGBA(0, 0, 0,1)
+#define GREEN_COLOR RGBA(39, 174, 96,1)
+#define LOCAL(x) NSLocalizedString(x,nil)
+
+//常用尺寸
+
+#define STATUS_HEIGHT [[UIApplication sharedApplication] statusBarFrame].size.height
+
+#define NAV_LARGE_HEIGHT 76
+
+#define NAV_NORMAL_HEIGHT 44
+
+#define TAB_HEIGHT 49
+
+#define BEGIN_LINE_NORMAL STATUS_HEIGHT+NAV_NORMAL_HEIGHT
+
+#define BEGIN_LINE_LARGE STATUS_HEIGHT+NAV_LARGE_HEIGHT
+
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+
+#define LABEL_HEIGHT_BIG 44
+#define LABEL_HEIGHT_SMALL 30
+#define LABEL_WIDTH_BIG SCREEN_WIDTH-60
+#define LABEL_WIDTH_SMALL SCREEN_WIDTH-200
+
+#define GETHEIGHT(x) x.frame.size.height
+#define GETWIDTH(x) x.frame.size.width
+#define GETX(x) x.frame.origin.x
+#define GETY(x) x.frame.origin.y
+#define BUTTONY(x) x.frame.origin.y+x.frame.size.height
+#define RIGHTX(x) GETX(x)+GETWIDTH(x)
+
+
+#define BEGIN_X 20
+
+#define FONT(x) [UIFont systemFontOfSize:x]
+#define BOLDFONT(x) [UIFont boldSystemFontOfSize:x.font.pointSize]
+
+
+#endif /* PrefixHeader_pch */
+
+#import "MBProgressHUD.h"
+#import "Toast+UIView.h"
+#import <QuartzCore/QuartzCore.h>
+#import <AVOSCloud/AVOSCloud.h>
+#import "TableViewAnimationKit.h"
+#import "globalFunction.h"
+

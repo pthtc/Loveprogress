@@ -1,0 +1,192 @@
+/* 
+  Localizable.strings
+  loveProgress
+
+  Created by 彭天浩 on 2017/12/25.
+  Copyright © 2017年 彭天浩. All rights reserved.
+*/
+
+/*Global*/
+save = "Save";
+sureToDelete = "Are you sure?";
+cancel = "Cancel";
+Delete = "Delete";
+sure = "Sure";
+fail = "Failed";
+Edit = "Edit";
+succeed = "Succeed";
+OK = "OK";
+YES = "Yes";
+
+
+/*TAB*/
+tab_progress = "Progress";
+tab_function = "Functions";
+tab_me = "Me";
+tab_he = "Him";
+tab_she = "Her";
+tab_ze = "Zir";
+
+/*loginViewController*/
+login = "Login";
+phoneNum = "Phone number";
+phoneNumPlease = "Please enter your phone number";
+verifyNum = "Verification Code";
+verifyNumPlease = "Please enter your verification code";
+verifyNumSend = "Send a verification code";
+phoneWrong = "Wrong Phone number";
+phoneNotExist = "A new account will be created";
+codeSent = "Code has sent";
+codeWrong = "Wrong verification code";
+codeNotValid = "Not valid verification code";
+
+userName = "User Name";
+userNamePlease = "Please enter your user name";
+password = "Password";
+passwordPlease = "Please enter your password";
+passwordWrong = "Wrong user name or password";
+passwordNotValid = "Not valid password";
+
+registerNow = "Don't have an account? Click here to register";
+
+
+
+/*registerViewController*/
+register = "Register";
+loginNow = "Have an account already? Login now";
+userNameExist = "The account has already existed";
+inconsistent = "Two passwords must be consistent";
+passwordPleaseAgain = "Please enter your password again";
+passwordPlease2 = "Enter your password (6 characters at least)";
+
+
+/*infoViewController*/
+sbirthday = "'s birthday";
+ziliao = " Infomation";
+gender = "Gender";
+Male = "Male";
+Female = "Female";
+LGBT = "LGBT";
+nickName = "Nickname";
+birthday = "Birthday";
+firstReason = "Reason For Love";
+firstReasonContent = "Please enter your original reason for loving him/her/zir. \nIT CANNOT BE CHANGED LATER.";
+His = "His";
+Her = "Her";
+Zir = "Zir";
+nickNamePlease1 = "Please enter ";
+nickNamePlease2 = " nick name";
+nickWrong = "Nickname cannot be empty";
+hiss = "his";
+hers = "her";
+zirs = "zir";
+birthdayPlease1 = "Please select ";
+birthdayPlease2 = " birthday";
+
+/*functionViewController*/
+function = "Function";
+
+/*jinianViewController*/
+jinian = "Memory";
+overday1 = "It's been over ";
+overday2 = " days";
+overday3 = " day";
+leftday1 = "";
+leftday2 = "days left";
+leftday3 = "day left";
+addAction = "Add Plan";
+addMemory = "Add Memory";
+addToXingdong= "Add Plan";
+
+
+/*jinianDetailViewController*/
+jinnianName = "Memories";
+jinnianNamePlease = "Please enter your memory";
+jinnianDate = "Date";
+jinnianDatePlease = "Please select the date";
+jinnianNameWrong = "Memory cannot be empty";
+
+/*xingdongViewController*/
+xingdong = "Plans";
+haiyou ="";
+haiyouday2 = " days left";
+haiyouday3 = " day left";
+neirong = "Content: ";
+
+/*xingdongDetailViewController*/
+actionName = "Plan Name";
+actionNamePlease = "Please enter your plan name";
+actionDate = "Date";
+actionDatePlease = "Please select the date";
+actionNameWrong = "Plan name cannot be empty";
+actionContent = "Plan Detail";
+ContentPlease = "Please enter your plan detail";
+
+/*jiluEditViewController*/
+jiluPlease = "Please enter your moment";
+yousheng =  "Life time serious";
+advantage = "Advantages";
+daka = "Say hi";
+eatSleep = "Have some fun";
+xiuse = "Shy time";
+surprise = "surprise";
+
+/*jiluViewController*/
+jilu = "Moments";
+
+/*xihaoViewController*/
+xihao = "Favorites";
+xihuan = "Likes";
+taoyan = "Dislikes";
+quanbu = "All";
+xiaofei = "Shop";
+eat = "Food";
+entertain = "Play";
+chat = "Chat";
+other = "Other";
+
+/*xihaoEditViewController*/
+xihaoName = "Like/Dislike Name";
+xihaoNamePlease = "Please enter your Like/Dislike";
+xihaoNameWrong = "Like/Dislike cannot be empty";
+
+/*meViewController*/
+me = "Me";
+ziliaoMe = "Infomation";
+fankui = "Feedback";
+about = "About";
+sureToLogout = "Are you sure?";
+
+/*aboutViewController*/
+emailme = "Email me";
+donate = "Donate";
+emailFail = "Email address is now in the pasteboard";
+
+/*progressViewController*/
+
+dating = "Dating";
+inlove = "Fall In Love";
+live = "Life Scene";
+aboutToMarried = "Engagement";
+married  = "Married";
+nextLevel = "Next Stage: ";
+noNext = "No more stage. May your love will last forever";
+achievement = "Achievement";
+toFinish = "Click To Finish";
+goFinish = "Go";
+finished = "Finished";
+updateNow = "UPDATE";
+sureToUpdate = "Are you sure?";
+welcomeDefault = "Love you for all my life";
+waitPlease = "Coming soon";
+/*achievementViewController*/
+achievementTitle = "Achievement";
+
+/*selectLevelViewController*/
+whereRelation = "Relationship";
+
+/*wordLimit*/
+yiqian = "1000 characters limited";
+yibai = "100 characters limited";
+
+

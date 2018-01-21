@@ -1,0 +1,181 @@
+/* 
+  Localizable.strings
+  loveProgress
+
+  Created by 彭天浩 on 2017/12/25.
+  Copyright © 2017年 彭天浩. All rights reserved.
+*/
+
+/*Global*/
+save = "保存";
+sureToDelete = "确定删除？";
+cancel = "取消";
+Delete = "删除";
+sure = "确定";
+fail = "操作失败";
+Edit = "编辑";
+succeed = "操作成功";
+OK = "确定";
+YES = "确定";
+
+/*TAB*/
+tab_progress = "进度";
+tab_function = "功能";
+tab_me = "我";
+tab_he = "他";
+tab_she = "她";
+tab_ze = "TA";
+
+/*loginViewController*/
+login = "登录";
+phoneNum = "手机号";
+phoneNumPlease = "请输入您的手机号";
+verifyNum = "验证码";
+verifyNumPlease = "请输入您的验证码";
+verifyNumSend = "发送验证码";
+phoneWrong = "手机号格式错误";
+phoneNotExist = "我们将会为你的手机注册一个新账号";
+codeWrong = "验证码错误";
+codeNotValid = "验证码格式错误";
+userName = "用户名";
+userNamePlease = "请输入您的用户名";
+password = "密码";
+passwordPlease = "请输入您的密码";
+
+registerNow = "没有账号？现在注册！";
+
+/*registerViewController*/
+register = "注册";
+loginNow = "拥有账号？点击登录";
+userNameExist = "用户名已被注册";
+inconsistent = "两次密码输入不一致";
+
+/*infoViewController*/
+sbirthday = "的生日";
+ziliao = "的资料";
+gender = "Ta的性别";
+Male = "男生";
+Female = "女生";
+LGBT = "跨性别者";
+nickName = "Ta的昵称";
+birthday = "Ta的生日";
+firstReason = "最初为什么喜欢Ta呢？";
+firstReasonContent = "最初为什么喜欢Ta呢？\n填写后无法更改，请谨慎";
+His = "他";
+Her = "她";
+Zir = "Ta";
+nickNamePlease1 = "请输入";
+nickNamePlease2 = "的昵称";
+nickWrong = "昵称不能为空";
+hiss = "他";
+hers = "她";
+zirs = "Ta";
+birthdayPlease1 = "请选择";
+birthdayPlease2 = "的生日";
+
+/*functionViewController*/
+function = "功能";
+
+/*jinianViewController*/
+jinian = "纪念";
+overday1 = "已经过了 ";
+overday2 = " 天";
+overday3 = " 天";
+leftday1 = "距离下个纪念日还有";
+leftday2 = "天";
+leftday3 = "天";
+addAction = "去行动";
+addMemory = "添加纪念";
+addToXingdong= "添加行动";
+
+
+/*jinianDetailViewController*/
+jinnianName = "纪念日名称";
+jinnianNamePlease = "请输入纪念日名称";
+jinnianDate = "日期";
+jinnianDatePlease = "请选择日期";
+jinnianNameWrong = "纪念日名称不能为空";
+
+/*xingdongViewController*/
+xingdong = "行动";
+haiyou ="还有";
+haiyouday2 = "天";
+haiyouday3 = "天";
+neirong = "行动内容: ";
+
+/*xingdongDetailViewController*/
+actionName = "行动名称";
+actionNamePlease = "请输入行动名称";
+actionDate = "日期";
+actionDatePlease = "请选择日期";
+actionNameWrong = "行动名称不能为空";
+actionContent = "行动内容";
+ContentPlease = "请输入行动内容";
+
+/*jiluEditViewController*/
+jiluPlease = "记录爱的瞬间";
+yousheng =  "有生之年系列";
+advantage = "每周优点";
+daka = "打卡";
+eatSleep = "吃喝玩乐";
+xiuse = "有点羞涩";
+surprise = "惊喜";
+
+
+/*jiluViewController*/
+jilu = "记录";
+
+/*xihaoViewController*/
+xihao = "喜好";
+xihuan = "喜欢";
+taoyan = "讨厌";
+quanbu = "全部";
+xiaofei = "购物";
+eat = "吃喝";
+entertain = "娱乐";
+chat = "聊天";
+other = "其他";
+
+/*xihaoEditViewController*/
+xihaoName = "喜好名称";
+xihaoNamePlease = "请输入喜好名称";
+xihaoNameWrong = "喜好名称不能为空";
+
+/*meViewController*/
+me = "我";
+ziliaoMe = "资料";
+fankui = "反馈";
+about = "关于";
+sureToLogout = "确定注销？";
+
+/*aboutViewController*/
+emailme = "邮件联系";
+donate = "捐赠";
+emailFail = "邮箱地址已复制到剪贴板";
+
+/*progressViewController*/
+dating = "约会";
+inlove = "相爱";
+live = "生活场景";
+aboutToMarried = "结婚准备";
+married  = "步入婚姻";
+nextLevel = "下一阶段: ";
+noNext = "答应我，一定要幸福";
+achievement = "我的成就";
+toFinish = "点击完成";
+goFinish = "去完成";
+finished = "已完成";
+updateNow = "现在升级";
+sureToUpdate = "确定要升级关系？";
+welcomeDefault = "陪伴才是最深情的告白";
+waitPlease = "敬请期待";
+
+/*achievementViewController*/
+achievementTitle = "成就";
+
+/*selectLevelViewController*/
+whereRelation = "你们的关系是？";
+
+/*wordLimit*/
+yiqian = "限制1000字符";
+yibai = "限制100字符";
