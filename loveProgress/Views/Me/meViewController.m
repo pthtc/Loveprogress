@@ -36,8 +36,11 @@
     // Do any additional setup after loading the view.
 }
 
--(void) viewWillAppear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
+}
+
+-(void) viewWillAppear:(BOOL)animated{
     [waterBackView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     WaterRippleView *waterView = [[WaterRippleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240)
                                                         mainRippleColor:RGBA(52, 152, 219, 1)

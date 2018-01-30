@@ -23,6 +23,10 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 -(void)setScreen{
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.tabBarController.tabBar.hidden = YES;

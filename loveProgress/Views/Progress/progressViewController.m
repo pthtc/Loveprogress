@@ -381,9 +381,12 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated{
     self.tabBarController.tabBar.hidden = NO;
     self.navigationController.navigationBar.hidden = YES;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     [self getNavData];
 }
 

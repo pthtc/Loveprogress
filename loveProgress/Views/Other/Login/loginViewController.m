@@ -399,7 +399,7 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.tag == 101) {
-        if(![textField.text isTelephone]){
+        if(!(textField.text.length == 11 && [self isPureInt:textField.text])){
             phoneWrongLabel.alpha = 1;
             phoneNotExistLabel.alpha = 0;
             phoneValid = NO;
@@ -486,7 +486,7 @@
     if (theTextField.tag == 101 || theTextField.tag == 102) {
         verifyNotValidLabel.alpha = 0;
         phoneWrongLabel.alpha = 0;
-        if([_phoneText.text isTelephone] && [_verifyText.text isValidZipcode]){
+        if(_phoneText.text.length == 11 && [self isPureInt:_phoneText.text] && [_verifyText.text isValidZipcode]){
             [_loginButton setBackgroundColor:ZANGQING_COLOR];
         }else{
             [_loginButton setBackgroundColor:[UIColor grayColor]];
@@ -561,6 +561,12 @@
 - (void)registerJump{
     registerViewController *re = [[registerViewController alloc] init];
     [self presentViewController:re animated:YES completion:NULL];
+}
+
+- (BOOL)isPureInt:(NSString *)string{
+    NSScanner* scan = [NSScanner scannerWithString:string];
+    int val;
+    return [scan scanInt:&val] && [scan isAtEnd];
 }
 
 /*

@@ -343,6 +343,7 @@
     [cellArray removeAllObjects];
     [self getData];
 }
+
 - (void)addXihao:(int)like scene:(int)scene{
     xihaoEditViewController *detail = [[xihaoEditViewController alloc] init];
     detail.like = like;

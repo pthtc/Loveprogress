@@ -24,7 +24,7 @@
 # 测试步骤
 
 * 使用terminal进入文件夹，键入`pod install`
-* 访问[Leancloud](https://leancloud.cn)生成app
+* 访问[Leancloud](https://leancloud.cn/?source=3UJ5G2GC)生成app
 * 按照ER图创建对应图表
 * 将获得的`ApplicationId`和`clientKey `填入`AppDelegate.m`
 * 启动
@@ -33,9 +33,10 @@
 
 # 第三方
 
-* [Leancloud](https://leancloud.cn):后端
+* [Leancloud](https://leancloud.cn/?source=3UJ5G2GC):后端
 * [MJRefresh](https://github.com/CoderMJLee/MJRefresh):下拉刷新
 * [WSDaePickerView](https://github.com/Zws-China/DatePicker)：日期选择
 * [MBProgressHUD](https://github.com/jdg/MBProgressHUD)：小菊花
 * [SDWebImage](https://github.com/rs/SDWebImage)：异步图片加载
 * [ZLPhotoBrowser](https://github.com/longitachi/ZLPhotoBrowser)：图片选择器
+

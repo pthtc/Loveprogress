@@ -719,8 +719,24 @@
 				CE842F0E1FF0CC4E00DAAAE2 /* MBProgressHUD */,
 				CE842F0A1FF0CC1C00DAAAE2 /* TextView */,
 				CE842ECA1FF0CBB700DAAAE2 /* LeanCloudFeedback */,
+				CE842EC81FF0CBB700DAAAE2 /* SDWebImage */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		CE842EC81FF0CBB700DAAAE2 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				CE842EC91FF0CBB700DAAAE2 /* FLAnimatedImage */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		CE842EC91FF0CBB700DAAAE2 /* FLAnimatedImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FLAnimatedImage;
 			sourceTree = "<group>";
 		};
 		CE842ECA1FF0CBB700DAAAE2 /* LeanCloudFeedback */ = {
