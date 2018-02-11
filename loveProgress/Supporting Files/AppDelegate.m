@@ -11,7 +11,7 @@
 #import "loginViewController.h"
 #import "launchViewController.h"
 #import "selectLevelViewController.h"
-
+#import <UserNotifications/UserNotifications.h>
 @interface AppDelegate ()
 
 @end
@@ -23,9 +23,26 @@
     // Override point for customization after application launch.
     launchViewController *launch = [[launchViewController alloc] init];
     self.window.rootViewController = launch;
+    
     [AVOSCloud setApplicationId:@"ApplicationId" clientKey:@"clientKey"];
     [AVOSCloud setAllLogsEnabled:NO];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+//    [AVPush setProductionMode:NO];
+    [self registerForRemoteNotification];
+   
+    //跟踪推送和应用的打开情况
+    if (application.applicationState != UIApplicationStateBackground) {
+        // Track an app open here if we launch with a push, unless
+        // "content_available" was used to trigger a background push (introduced
+        // in iOS 7). In that case, we skip tracking here to avoid double
+        // counting the app-open.
+        BOOL preBackgroundPush = ![application respondsToSelector:@selector(backgroundRefreshStatus)];
+        BOOL oldPushHandlerOnly = ![self respondsToSelector:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:)];
+        BOOL noPushPayload = ![launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        if (preBackgroundPush || oldPushHandlerOnly || noPushPayload) {
+            [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        }
+    }
     return YES;
 }
 
@@ -49,6 +66,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    int num=application.applicationIconBadgeNumber;
+    if(num!=0){
+        AVInstallation *currentInstallation = [AVInstallation currentInstallation];
+        [currentInstallation setBadge:0];
+        [currentInstallation saveEventually];
+        application.applicationIconBadgeNumber=0;
+    }
 }
 
 
@@ -60,81 +84,91 @@
     // 然后调用刷新的方法，将数据从云端拉到本地
 
 }
+/**
+ * 初始化UNUserNotificationCenter
+ */
+- (void)registerForRemoteNotification {
+    // iOS10 兼容
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
+        // 使用 UNUserNotificationCenter 来管理通知
+        UNUserNotificationCenter *uncenter = [UNUserNotificationCenter currentNotificationCenter];
+        // 监听回调事件
+        [uncenter setDelegate:self];
+        //iOS10 使用以下方法注册，才能得到授权
+        [uncenter requestAuthorizationWithOptions:(UNAuthorizationOptionAlert+UNAuthorizationOptionBadge+UNAuthorizationOptionSound)
+                                completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                        [[UIApplication sharedApplication] registerForRemoteNotifications];
+                                        //TODO:授权状态改变
+                                        NSLog(@"%@" , granted ? @"授权成功" : @"授权失败");
+                                    });
 
-/** 创建引导页 */
-//- (void)createGuideVC {
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    NSString *firstKey = [NSString stringWithFormat:@"isFirst%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-//    NSString *isFirst = [defaults objectForKey:firstKey];
-//
-//    NSMutableArray *backgroundImageNames = [NSMutableArray arrayWithCapacity:4];
-//    NSMutableArray *coverImageNames = [NSMutableArray arrayWithCapacity:4];
-//    if (!isFirst.length) {
-//        for (NSInteger i = 1; i < 5; i ++) {
-//            NSString *temp1 = [NSString stringWithFormat:@"ggps_%ld_bg", i];
-//            NSString *temp2 = [NSString stringWithFormat:@"ggps_%ld_text", i];
-//            if ([[UIApplication sharedApplication] statusBarFrame].size.height > 20) {
-//                temp1 = [NSString stringWithFormat:@"x_%@", temp1];
-//                temp2 = [NSString stringWithFormat:@"x_%@", temp2];
-//            }
-//
-//            [backgroundImageNames addObject:temp1];
-//            [coverImageNames addObject:temp2];
-//        }
-//
-//        // NO.1
-//        //        self.introductionView = [[JhtGradientGuidePageVC alloc] initWithGuideImageNames:backgroundImageNames withLastRootViewController:[[ViewController alloc] init]];
-//
-//        // NO.2
-//        //        self.introductionView = [[JhtGradientGuidePageVC alloc] initWithCoverImageNames:coverImageNames withBackgroundImageNames:backgroundImageNames withLastRootViewController:[[ViewController alloc] init]];
-//
-//        // NO.3
-//        // case 1
-//        UIButton *enterButton = [[UIButton alloc] init];
-//        [enterButton setTitle:@"点击进入" forState:UIControlStateNormal];
-//        [enterButton setBackgroundColor:[UIColor purpleColor]];
-//        enterButton.layer.cornerRadius = 8.0;
-//        // case 2
-//        //        UIButton *enterButton = [[UIButton alloc] initWithFrame:CGRectMake((CGRectGetWidth([UIScreen mainScreen].bounds) - 100) / 2, CGRectGetHeight([UIScreen mainScreen].bounds) - 30 - 50, 100, 30)];
-//        //        [enterButton setBackgroundImage:[UIImage imageNamed:@"enter_btn"] forState:UIControlStateNormal];
-//
-//        MainTabBarControllerConfig *tabbarConfig = [[MainTabBarControllerConfig alloc]init];
-//        CYLTabBarController *mainTabbarController = tabbarConfig.mainTabBarController;
-//        if(![AVUser currentUser]) {
-//            self.introductionView = [[JhtGradientGuidePageVC alloc] initWithCoverImageNames:coverImageNames withBackgroundImageNames:backgroundImageNames withEnterButton:enterButton withLastRootViewController:[[loginViewController alloc] init]];
-//        }else{
-//            if ([[[AVUser currentUser] objectForKey:@"haveInfo"] isEqual: @1]) {
-//                self.introductionView = [[JhtGradientGuidePageVC alloc] initWithCoverImageNames:coverImageNames withBackgroundImageNames:backgroundImageNames withEnterButton:enterButton withLastRootViewController:mainTabbarController];
-//            }else{
-//                selectLevelViewController *select = [[selectLevelViewController alloc] init];
-//                self.introductionView = [[JhtGradientGuidePageVC alloc] initWithCoverImageNames:coverImageNames withBackgroundImageNames:backgroundImageNames withEnterButton:enterButton withLastRootViewController:select];
-//            }
-//        }
-//
-//
-//
-//        // 添加《跳过》按钮
-//        self.introductionView.isNeedSkipButton = NO;
-//        /******** 更多个性化配置见《JhtGradientGuidePageVC.h》 ********/
-//
-//        self.window.rootViewController = self.introductionView;
-//
-//        __weak AppDelegate *weakSelf = self;
-//        self.introductionView.didClickedEnter = ^() {
-//            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//            NSString *firstKey = [NSString stringWithFormat:@"isFirst%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-//            NSString *isFirst = [defaults objectForKey:firstKey];
-//            if (!isFirst) {
-//                [defaults setObject:@"notFirst" forKey:firstKey];
-//                [defaults synchronize];
-//            }
-//            weakSelf.introductionView = nil;
-//        };
-//    }else{
-//        launchViewController *launch = [[launchViewController alloc] init];
-//        self.window.rootViewController = launch;
-//    }
-//}
+                                }];
+        // 获取当前的通知授权状态, UNNotificationSettings
+        [uncenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            NSLog(@"%s\nline:%@\n-----\n%@\n\n", __func__, @(__LINE__), settings);
+            /*
+             UNAuthorizationStatusNotDetermined : 没有做出选择
+             UNAuthorizationStatusDenied : 用户未授权
+             UNAuthorizationStatusAuthorized ：用户已授权
+             */
+            if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined) {
+                NSLog(@"未选择");
+            } else if (settings.authorizationStatus == UNAuthorizationStatusDenied) {
+                NSLog(@"未授权");
+            } else if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
+                NSLog(@"已授权");
+            }
+        }];
+    }
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        UIUserNotificationType types = UIUserNotificationTypeAlert |
+        UIUserNotificationTypeBadge |
+        UIUserNotificationTypeSound;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        UIRemoteNotificationType types = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeSound;
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+    }
+#pragma clang diagnostic pop
+}
 
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(nonnull NSError *)error{
+    NSLog(@"Notifications error :%@",error);
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [AVOSCloud handleRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    if (application.applicationState == UIApplicationStateActive) {
+        // 此处可以写上应用激活状态下接收到通知的处理代码，如无需处理可忽略
+        NSLog(@"userInfo == \n%@\n",userInfo[@"aps"][@"alert"]);
+
+        UILocalNotification *notification=[[UILocalNotification alloc] init];
+//        notification.fireDate=[NSDate dateWithTimeIntervalSinceNow:1];
+        notification.alertBody=userInfo[@"aps"][@"alert"];
+        notification.alertTitle=userInfo[@"aps"][@"alert"];
+        notification.repeatInterval=NSCalendarUnitSecond;
+        notification.applicationIconBadgeNumber=1;
+        
+        notification.userInfo=@{@"name":@"Tianhao Peng"};
+        notification.soundName=UILocalNotificationDefaultSoundName;
+        //[[UIApplication sharedApplication]scheduleLocalNotification:notification];
+        [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+    } else {
+        // The application was just brought from the background to the foreground,
+        // so we consider the app as having been "opened by a push notification."
+        [AVAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+    }
+}
 
 @end

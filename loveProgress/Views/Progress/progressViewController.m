@@ -379,6 +379,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBar.hidden = NO;
+    [AVAnalytics endLogPageView:@"progressPage"];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -388,6 +389,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [self getNavData];
+    [AVAnalytics beginLogPageView:@"progressPage"];
 }
 
 -(void)jumpToPage:(NSString *)pageName{

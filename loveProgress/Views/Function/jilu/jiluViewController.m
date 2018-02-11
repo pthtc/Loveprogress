@@ -41,6 +41,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"jiluPage"];
     [self.navigationController.navigationBar setHidden:NO];
     if (_avid) {
         jiluTableViewCell *cellTemp = [[jiluTableViewCell alloc] init];
@@ -255,5 +257,9 @@
 
 - (void)addArrow{
     arrow.alpha = 1;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"jiluPage"];
 }
 @end

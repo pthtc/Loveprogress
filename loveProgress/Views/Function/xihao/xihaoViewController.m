@@ -338,6 +338,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"xihaoPage"];
     self.navigationController.navigationBar.hidden = NO;
     skitFlag = 0;
     [cellArray removeAllObjects];
@@ -356,6 +358,11 @@
     [self.navigationController pushViewController:detail animated:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+//    self.tabBarController.tabBar.hidden = NO;
+    [AVAnalytics endLogPageView:@"xihaoPage"];
+}
 
 /*
  #pragma mark - Navigation

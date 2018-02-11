@@ -40,6 +40,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"xingdongPage"];
     [self.navigationController.navigationBar setHidden:NO];
     if (_avid) {
         NSLog(@"myname = %@, mydate = %@, avid = %@",_myName,_myDate,_avid);
@@ -273,6 +275,10 @@
     arrow.alpha = 1;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"xingdongPage"];
+}
 /*
  #pragma mark - Navigation
  

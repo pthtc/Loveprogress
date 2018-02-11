@@ -40,6 +40,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"jinianPage"];
     [self.navigationController.navigationBar setHidden:NO];
 
     if (_avid) {
@@ -272,6 +274,10 @@
 
 - (void)addArrow{
     arrow.alpha = 1;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"jinianPage"];
 }
 /*
 #pragma mark - Navigation

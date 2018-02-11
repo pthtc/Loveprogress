@@ -179,3 +179,19 @@ whereRelation = "你们的关系是？";
 /*wordLimit*/
 yiqian = "限制1000字符";
 yibai = "限制100字符";
+
+/*guanxi*/
+guanxi="关系";
+friendRelation = "TA的朋友";
+relativeRelation ="TA的亲属";
+seedetail = "查看详情";
+nodetail = "亲友信息为空";
+
+/*guanxiEdit*/
+guanxiName = "亲友姓名";
+guanxiNamePlease = "请输入亲友姓名（4字内）";
+guanxiNameWrong = "亲友姓名不能为空";
+guanxidetail= "亲友信息";
+guanxidetailPlease = "请输入亲友亲友信息";
+guanxidetailWrong = "亲友信息不能为空";
+lessfour = "请输入4字以下的姓名";

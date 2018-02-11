@@ -24,6 +24,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [AVAnalytics beginLogPageView:@"about"];
     self.tabBarController.tabBar.hidden = YES;
 }
 
@@ -133,6 +134,11 @@
 {
     //关闭邮件发送窗口
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"about"];
 }
 /*
 #pragma mark - Navigation

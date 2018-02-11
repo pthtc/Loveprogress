@@ -189,4 +189,17 @@ whereRelation = "Relationship";
 yiqian = "1000 characters limited";
 yibai = "100 characters limited";
 
-
+/*guanxi*/
+guanxi="Friends";
+friendRelation = "Friends";
+relativeRelation ="Relatives";
+seedetail = "Detail";
+nodetail = "No detail";
+/*guanxiEdit*/
+guanxiName = "Name";
+guanxiNamePlease = "Please enter the name";
+guanxiNameWrong = "The name cannot be empty";
+guanxidetail= "Detail";
+guanxidetailPlease = "Please enter the detail";
+guanxidetailWrong = "The detail cannot be empty";
+lessfour = "The name should be less than 4 characters";

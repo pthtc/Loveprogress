@@ -11,6 +11,7 @@
 #import "jiluViewController.h"
 #import "jinianViewController.h"
 #import "xingdongViewController.h"
+#import "guanxiViewController.h"
 @interface functionViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 @property (nonatomic,strong) UIScrollView *scrollerView;
 
@@ -25,20 +26,11 @@
     // Do any additional setup after loading the view.
 }
 
-//-(void)getDataTest{
-//    AVQuery *query = [AVQuery queryWithClassName:@"jilu"];
-//    [query orderByDescending:@"createdAt"];
-//    [query whereKey:@"owner" equalTo:[AVUser currentUser]];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        for(AVObject *avObject in objects){
-//            NSLog(@"%@",avObject[@"content"]);
-//            NSDictionary *objectId = avObject[@"imgArray"];
-//            NSLog(@"[test]%@",objectId);
-//            NSLog(@"content:%@",avObject[@"content"]);
-//            NSLog(@"tag:%@",avObject[@"tag"]);
-//        }
-//    }];
-//}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+    [AVAnalytics beginLogPageView:@"functionPage"];
+}
 
 -(void)setScreen{
     self.title = LOCAL(@"function");
@@ -49,7 +41,7 @@
     [_scrollerView flashScrollIndicators];
     _scrollerView.scrollEnabled = YES;
     _scrollerView.delegate = self;
-    _scrollerView.contentSize = CGSizeMake(SCREEN_WIDTH, 5+4*(height+5));
+    _scrollerView.contentSize = CGSizeMake(SCREEN_WIDTH, 5+5*(height+5));
     _scrollerView.directionalLockEnabled = YES;
     _scrollerView.bounces = YES;
     _scrollerView.showsVerticalScrollIndicator = NO;
@@ -60,13 +52,13 @@
     
     
     NSArray *imgArray;
-    if ([globalFunction isChineseLanguage]) {
-        imgArray = @[@"jinian",@"xingdong",@"jilu",@"aihao"];
-    }else{
-        imgArray = @[@"Memories",@"plans",@"moments",@"favorites"];
-    }
-    
-    for (int i = 0; i<4; i++) {
+//    if ([globalFunction isChineseLanguage]) {
+        imgArray = @[@"jinian",@"xingdong",@"jilu",@"aihao",@"guanxi"];
+//    }else{
+//        imgArray = @[@"Memories",@"plans",@"moments",@"favorites"];
+//    }
+
+    for (int i = 0; i<5; i++) {
         UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 5+i*(height+5), SCREEN_WIDTH, height)];
         view.tag = 100+i;
         view.userInteractionEnabled = YES;
@@ -94,6 +86,9 @@
     }else if (view.tag == 103){
         xihaoViewController *xihao = [[xihaoViewController alloc] init];
         [self.navigationController pushViewController:xihao animated:YES];
+    }else if (view.tag == 104){
+        guanxiViewController *guanxi = [[guanxiViewController alloc] init];
+        [self.navigationController pushViewController:guanxi animated:YES];
     }
 }
 
@@ -102,10 +97,10 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    self.tabBarController.tabBar.hidden = NO;
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"functionPage"];
 }
-
 /*
 #pragma mark - Navigation
 

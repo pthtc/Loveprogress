@@ -41,6 +41,8 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [AVAnalytics beginLogPageView:@"TA"];
     [waterBackView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     WaterRippleView *waterView = [[WaterRippleView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 240)
                                                         mainRippleColor:RGBA(52, 152, 219, 1)
@@ -327,6 +329,11 @@
     UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return img;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [AVAnalytics endLogPageView:@"TA"];
 }
 /*
 #pragma mark - Navigation

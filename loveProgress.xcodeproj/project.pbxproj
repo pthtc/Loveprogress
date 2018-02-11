@@ -20,6 +20,11 @@
 		CE0804651FFE85E000C7406D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0804641FFE85E000C7406D /* MessageUI.framework */; };
 		CE0804681FFF458500C7406D /* navTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0804671FFF458500C7406D /* navTableViewCell.m */; };
 		CE08046B1FFF4A8F00C7406D /* progressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE08046A1FFF4A8F00C7406D /* progressTableViewCell.m */; };
+		CE1941AE202F257D00D4593C /* guanxiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1941AD202F257D00D4593C /* guanxiViewController.m */; };
+		CE1941B9202F28C600D4593C /* ZYQSphereView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1941B1202F28C600D4593C /* ZYQSphereView.m */; };
+		CE1941BA202F28C600D4593C /* PFGoldenSectionSpiral.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1941B3202F28C600D4593C /* PFGoldenSectionSpiral.m */; };
+		CE1941BD202F33C400D4593C /* guanxiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1941BC202F33C400D4593C /* guanxiModel.m */; };
+		CE1941C1203002A600D4593C /* guanxiEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1941C0203002A600D4593C /* guanxiEditViewController.m */; };
 		CE4CD1441FEF89390015AED0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD1431FEF89390015AED0 /* AppDelegate.m */; };
 		CE4CD1471FEF89390015AED0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD1461FEF89390015AED0 /* ViewController.m */; };
 		CE4CD14C1FEF89390015AED0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4CD14B1FEF89390015AED0 /* Assets.xcassets */; };
@@ -145,6 +150,22 @@
 		CE0804671FFF458500C7406D /* navTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = navTableViewCell.m; sourceTree = "<group>"; };
 		CE0804691FFF4A8F00C7406D /* progressTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = progressTableViewCell.h; sourceTree = "<group>"; };
 		CE08046A1FFF4A8F00C7406D /* progressTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = progressTableViewCell.m; sourceTree = "<group>"; };
+		CE0A64AB2027663700B261ED /* loveProgress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = loveProgress.entitlements; sourceTree = "<group>"; };
+		CE1941AC202F257D00D4593C /* guanxiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guanxiViewController.h; sourceTree = "<group>"; };
+		CE1941AD202F257D00D4593C /* guanxiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guanxiViewController.m; sourceTree = "<group>"; };
+		CE1941B0202F28C600D4593C /* PFPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFPoint.h; sourceTree = "<group>"; };
+		CE1941B1202F28C600D4593C /* ZYQSphereView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYQSphereView.m; sourceTree = "<group>"; };
+		CE1941B2202F28C600D4593C /* PFAxisDirection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAxisDirection.h; sourceTree = "<group>"; };
+		CE1941B3202F28C600D4593C /* PFGoldenSectionSpiral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFGoldenSectionSpiral.m; sourceTree = "<group>"; };
+		CE1941B4202F28C600D4593C /* PFRadian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFRadian.h; sourceTree = "<group>"; };
+		CE1941B5202F28C600D4593C /* PFMatrixTransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMatrixTransform.h; sourceTree = "<group>"; };
+		CE1941B6202F28C600D4593C /* PFMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMatrix.h; sourceTree = "<group>"; };
+		CE1941B7202F28C600D4593C /* ZYQSphereView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYQSphereView.h; sourceTree = "<group>"; };
+		CE1941B8202F28C600D4593C /* PFGoldenSectionSpiral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFGoldenSectionSpiral.h; sourceTree = "<group>"; };
+		CE1941BB202F33C400D4593C /* guanxiModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guanxiModel.h; sourceTree = "<group>"; };
+		CE1941BC202F33C400D4593C /* guanxiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guanxiModel.m; sourceTree = "<group>"; };
+		CE1941BF203002A600D4593C /* guanxiEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = guanxiEditViewController.h; sourceTree = "<group>"; };
+		CE1941C0203002A600D4593C /* guanxiEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = guanxiEditViewController.m; sourceTree = "<group>"; };
 		CE4CD13F1FEF89390015AED0 /* loveProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4CD1421FEF89390015AED0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE4CD1431FEF89390015AED0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -376,6 +397,43 @@
 			path = about;
 			sourceTree = "<group>";
 		};
+		CE1941AB202F257400D4593C /* guanxi */ = {
+			isa = PBXGroup;
+			children = (
+				CE1941AC202F257D00D4593C /* guanxiViewController.h */,
+				CE1941AD202F257D00D4593C /* guanxiViewController.m */,
+				CE1941BB202F33C400D4593C /* guanxiModel.h */,
+				CE1941BC202F33C400D4593C /* guanxiModel.m */,
+				CE1941BE2030027F00D4593C /* guanxiEdit */,
+			);
+			path = guanxi;
+			sourceTree = "<group>";
+		};
+		CE1941AF202F28C600D4593C /* SphereView */ = {
+			isa = PBXGroup;
+			children = (
+				CE1941B0202F28C600D4593C /* PFPoint.h */,
+				CE1941B1202F28C600D4593C /* ZYQSphereView.m */,
+				CE1941B2202F28C600D4593C /* PFAxisDirection.h */,
+				CE1941B3202F28C600D4593C /* PFGoldenSectionSpiral.m */,
+				CE1941B4202F28C600D4593C /* PFRadian.h */,
+				CE1941B5202F28C600D4593C /* PFMatrixTransform.h */,
+				CE1941B6202F28C600D4593C /* PFMatrix.h */,
+				CE1941B7202F28C600D4593C /* ZYQSphereView.h */,
+				CE1941B8202F28C600D4593C /* PFGoldenSectionSpiral.h */,
+			);
+			path = SphereView;
+			sourceTree = "<group>";
+		};
+		CE1941BE2030027F00D4593C /* guanxiEdit */ = {
+			isa = PBXGroup;
+			children = (
+				CE1941BF203002A600D4593C /* guanxiEditViewController.h */,
+				CE1941C0203002A600D4593C /* guanxiEditViewController.m */,
+			);
+			path = guanxiEdit;
+			sourceTree = "<group>";
+		};
 		CE4CD1361FEF89390015AED0 = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +459,7 @@
 		CE4CD1411FEF89390015AED0 /* loveProgress */ = {
 			isa = PBXGroup;
 			children = (
+				CE0A64AB2027663700B261ED /* loveProgress.entitlements */,
 				CE842E831FF0CB6600DAAAE2 /* Tools */,
 				CE842C121FF0C1CC00DAAAE2 /* Views */,
 				CE842C111FF0AA4700DAAAE2 /* Supporting Files */,
@@ -688,6 +747,7 @@
 			children = (
 				CE842C191FF0C22300DAAAE2 /* functionViewController.h */,
 				CE842C1A1FF0C22300DAAAE2 /* functionViewController.m */,
+				CE1941AB202F257400D4593C /* guanxi */,
 				CE72C5D31FF5E68000840850 /* xihao */,
 				CE72C5CB1FF5E53900840850 /* xingdong */,
 				CE72C5C71FF5E51600840850 /* jinian */,
@@ -709,6 +769,7 @@
 		CE842E831FF0CB6600DAAAE2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CE1941AF202F28C600D4593C /* SphereView */,
 				CE0804531FFDEEBC00C7406D /* WaterRippleView */,
 				CE6E0EB61FFA242600EFF7C0 /* XWScanImage */,
 				CE72C5DE1FF75D6300840850 /* MJRefresh */,
@@ -955,6 +1016,11 @@
 					CE4CD13E1FEF89390015AED0 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					CE4CD1561FEF89390015AED0 = {
 						CreatedOnToolsVersion = 9.2;
@@ -1099,9 +1165,12 @@
 				CE72C5C11FF4FC3200840850 /* UIView+Extension.m in Sources */,
 				CE72C5DD1FF75AF200840850 /* jinianDetailViewController.m in Sources */,
 				CE72C6151FF75D6300840850 /* MJRefreshBackNormalFooter.m in Sources */,
+				CE1941C1203002A600D4593C /* guanxiEditViewController.m in Sources */,
 				CEDCFAA020031A7D00C5F973 /* launchViewController.m in Sources */,
 				CE021B041FFFC5D200E15A4B /* okModel.m in Sources */,
+				CE1941BD202F33C400D4593C /* guanxiModel.m in Sources */,
 				CE4CD1471FEF89390015AED0 /* ViewController.m in Sources */,
+				CE1941BA202F28C600D4593C /* PFGoldenSectionSpiral.m in Sources */,
 				CE08045A1FFDEF6900C7406D /* xihaoEditViewController.m in Sources */,
 				CE0804681FFF458500C7406D /* navTableViewCell.m in Sources */,
 				CE842EF91FF0CBB700DAAAE2 /* LCUtils.m in Sources */,
@@ -1142,6 +1211,7 @@
 				CE72C6111FF75D6300840850 /* NSBundle+MJRefresh.m in Sources */,
 				CE842F021FF0CBB700DAAAE2 /* LCUserFeedbackReply.m in Sources */,
 				CE6E0EC71FFBB96A00EFF7C0 /* xihaoCollectionViewCell.m in Sources */,
+				CE1941AE202F257D00D4593C /* guanxiViewController.m in Sources */,
 				CE72C60D1FF75D6300840850 /* UIScrollView+MJRefresh.m in Sources */,
 				CE72C6121FF75D6300840850 /* UIView+MJExtension.m in Sources */,
 				CE72C6101FF75D6300840850 /* UIScrollView+MJExtension.m in Sources */,
@@ -1155,6 +1225,7 @@
 				CE72C6181FF75D6300840850 /* MJRefreshAutoNormalFooter.m in Sources */,
 				CE842C181FF0C21300DAAAE2 /* progressViewController.m in Sources */,
 				CE72C5C01FF4FC3200840850 /* NSDate+Extension.m in Sources */,
+				CE1941B9202F28C600D4593C /* ZYQSphereView.m in Sources */,
 				CE72C6141FF75D6300840850 /* MJRefreshBackStateFooter.m in Sources */,
 				CE06783B1FF8B3920004B914 /* jiluEditViewController.m in Sources */,
 				CE842F191FF0CC7600DAAAE2 /* UITableView+XSAnimationKit.m in Sources */,
@@ -1345,6 +1416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = loveProgress/loveProgress.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75LAZ92Z5Q;
@@ -1367,6 +1439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = loveProgress/loveProgress.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75LAZ92Z5Q;
